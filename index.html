@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Registration Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="Company Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+        <div class="brand-text">
+          <span class="brand-title">Vendor Management System</span>
+          <span class="brand-sub">Vendor Registration Portal</span>
+        </div>
+      </div>
+      <div class="header-badge">
+        <i data-lucide="shield-check"></i>
+        Secure Form
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO BANNER ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Vendor Application Form</h1>
+      <p>Complete the form below to register as an approved vendor. All fields marked with <span class="req">*</span> are required. Your submitted documents will be securely stored.</p>
+      <div class="hero-steps">
+        <div class="step active" id="step-dot-1">
+          <div class="step-num">1</div>
+          <span>Company Info</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="step-dot-2">
+          <div class="step-num">2</div>
+          <span>Contact</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="step-dot-3">
+          <div class="step-num">3</div>
+          <span>Business</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="step-dot-4">
+          <div class="step-num">4</div>
+          <span>Bank</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="step-dot-5">
+          <div class="step-num">5</div>
+          <span>Documents</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN FORM ===== -->
+  <main class="main-content">
+    <form id="vendorForm" novalidate>
+
+      <!-- ── SECTION 1: COMPANY INFORMATION ── -->
+      <div class="form-section" id="section-1">
+        <div class="section-header">
+          <div class="section-icon"><i data-lucide="building-2"></i></div>
+          <div>
+            <h2>Company Information</h2>
+            <p>Provide your official business details as registered.</p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="companyName">Company / Vendor Name <span class="req">*</span></label>
+            <input type="text" id="companyName" name="companyName" placeholder="e.g. ABC Enterprises Pvt. Ltd." required />
+            <span class="error-msg">Company name is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="businessType">Business Type <span class="req">*</span></label>
+            <select id="businessType" name="businessType" required>
+              <option value="">— Select —</option>
+              <option>Sole Proprietorship</option>
+              <option>Partnership</option>
+              <option>LLP</option>
+              <option>Private Limited</option>
+              <option>Public Limited</option>
+              <option>Other</option>
+            </select>
+            <span class="error-msg">Please select a business type.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="registrationNo">Registration Number <span class="req">*</span></label>
+            <input type="text" id="registrationNo" name="registrationNo" placeholder="CIN / MSME / Trade License No." required />
+            <span class="error-msg">Registration number is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="gstNumber">GST Number</label>
+            <input type="text" id="gstNumber" name="gstNumber" placeholder="22AAAAA0000A1Z5" maxlength="15" />
+          </div>
+
+          <div class="form-group">
+            <label for="panNumber">PAN Number <span class="req">*</span></label>
+            <input type="text" id="panNumber" name="panNumber" placeholder="ABCDE1234F" maxlength="10" required />
+            <span class="error-msg">PAN number is required.</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── SECTION 2: CONTACT INFORMATION ── -->
+      <div class="form-section" id="section-2">
+        <div class="section-header">
+          <div class="section-icon"><i data-lucide="user-circle"></i></div>
+          <div>
+            <h2>Contact Information</h2>
+            <p>Primary point of contact for all vendor correspondence.</p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="contactName">Contact Person Name <span class="req">*</span></label>
+            <input type="text" id="contactName" name="contactName" placeholder="Full name" required />
+            <span class="error-msg">Contact name is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="designation">Designation</label>
+            <input type="text" id="designation" name="designation" placeholder="e.g. Director, Manager" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="contact@company.com" required />
+            <span class="error-msg">A valid email is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+            <span class="error-msg">Phone number is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="altPhone">Alternate Phone</label>
+            <input type="tel" id="altPhone" name="altPhone" placeholder="+91 98765 43210" />
+          </div>
+
+          <div class="form-group full">
+            <label for="address1">Address Line 1 <span class="req">*</span></label>
+            <input type="text" id="address1" name="address1" placeholder="Street / Building / Area" required />
+            <span class="error-msg">Address is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City <span class="req">*</span></label>
+            <input type="text" id="city" name="city" placeholder="City" required />
+            <span class="error-msg">City is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="state">State <span class="req">*</span></label>
+            <select id="state" name="state" required>
+              <option value="">— Select State —</option>
+              <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
+              <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
+              <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+              <option>Himachal Pradesh</option><option>Jharkhand</option>
+              <option>Karnataka</option><option>Kerala</option>
+              <option>Madhya Pradesh</option><option>Maharashtra</option>
+              <option>Manipur</option><option>Meghalaya</option><option>Mizoram</option>
+              <option>Nagaland</option><option>Odisha</option><option>Punjab</option>
+              <option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option>
+              <option>Telangana</option><option>Tripura</option>
+              <option>Uttar Pradesh</option><option>Uttarakhand</option>
+              <option>West Bengal</option>
+              <option>Andaman & Nicobar Islands</option>
+              <option>Chandigarh</option><option>Dadra & Nagar Haveli</option>
+              <option>Daman & Diu</option><option>Delhi</option>
+              <option>Jammu & Kashmir</option><option>Ladakh</option>
+              <option>Lakshadweep</option><option>Puducherry</option>
+              <option>Other</option>
+            </select>
+            <span class="error-msg">State is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="pinCode">PIN Code <span class="req">*</span></label>
+            <input type="text" id="pinCode" name="pinCode" placeholder="600001" maxlength="6" required />
+            <span class="error-msg">Valid 6-digit PIN is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" value="India" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SECTION 3: BUSINESS DETAILS ── -->
+      <div class="form-section" id="section-3">
+        <div class="section-header">
+          <div class="section-icon"><i data-lucide="briefcase"></i></div>
+          <div>
+            <h2>Business Details</h2>
+            <p>Tell us about your products, services, and business scale.</p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="businessNature">Nature of Business (Products / Services) <span class="req">*</span></label>
+            <textarea id="businessNature" name="businessNature" rows="3" placeholder="Briefly describe the products or services your company offers..." required></textarea>
+            <span class="error-msg">This field is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="annualTurnover">Annual Turnover (INR)</label>
+            <select id="annualTurnover" name="annualTurnover">
+              <option value="">— Select Range —</option>
+              <option>Below ₹10 Lakhs</option>
+              <option>₹10 – 50 Lakhs</option>
+              <option>₹50 Lakhs – 1 Crore</option>
+              <option>₹1 – 5 Crores</option>
+              <option>₹5 – 25 Crores</option>
+              <option>Above ₹25 Crores</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="vendorCategory">Vendor Category <span class="req">*</span></label>
+            <select id="vendorCategory" name="vendorCategory" required>
+              <option value="">— Select —</option>
+              <option>Manufacturer</option>
+              <option>Trader / Distributor</option>
+              <option>Service Provider</option>
+              <option>Contractor</option>
+              <option>Consultant</option>
+              <option>Other</option>
+            </select>
+            <span class="error-msg">Vendor category is required.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SECTION 4: BANK DETAILS ── -->
+      <div class="form-section" id="section-4">
+        <div class="section-header">
+          <div class="section-icon"><i data-lucide="landmark"></i></div>
+          <div>
+            <h2>Bank Details</h2>
+            <p>Required for payment processing. Information is kept confidential.</p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="bankName">Bank Name <span class="req">*</span></label>
+            <input type="text" id="bankName" name="bankName" placeholder="e.g. State Bank of India" required />
+            <span class="error-msg">Bank name is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="accountHolder">Account Holder Name <span class="req">*</span></label>
+            <input type="text" id="accountHolder" name="accountHolder" placeholder="As per bank records" required />
+            <span class="error-msg">Account holder name is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="accountNumber">Account Number <span class="req">*</span></label>
+            <input type="text" id="accountNumber" name="accountNumber" placeholder="Account number" required />
+            <span class="error-msg">Account number is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmAccountNumber">Confirm Account Number <span class="req">*</span></label>
+            <input type="text" id="confirmAccountNumber" name="confirmAccountNumber" placeholder="Re-enter account number" required />
+            <span class="error-msg" id="accNoError">Account numbers must match.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="ifscCode">IFSC Code <span class="req">*</span></label>
+            <input type="text" id="ifscCode" name="ifscCode" placeholder="SBIN0001234" maxlength="11" required />
+            <span class="error-msg">Valid IFSC code is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="branchName">Branch Name</label>
+            <input type="text" id="branchName" name="branchName" placeholder="e.g. Anna Nagar Branch" />
+          </div>
+
+          <div class="form-group">
+            <label for="accountType">Account Type</label>
+            <select id="accountType" name="accountType">
+              <option value="">— Select —</option>
+              <option>Savings</option>
+              <option>Current</option>
+              <option>Cash Credit</option>
+              <option>Overdraft</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SECTION 5: DOCUMENT UPLOADS ── -->
+      <div class="form-section" id="section-5">
+        <div class="section-header">
+          <div class="section-icon"><i data-lucide="file-text"></i></div>
+          <div>
+            <h2>Document Uploads</h2>
+            <p>Upload clear scans or photos. Accepted formats: PDF, JPG, PNG (max 5 MB each).</p>
+          </div>
+        </div>
+
+        <div class="upload-grid">
+
+          <!-- Business Registration -->
+          <div class="upload-card" id="card-businessReg">
+            <div class="upload-icon"><i data-lucide="file-badge"></i></div>
+            <div class="upload-info">
+              <h3>Business Registration Certificate <span class="req">*</span></h3>
+              <p>CIN, MSME, Trade License, or any official registration document</p>
+            </div>
+            <label class="upload-btn" for="businessRegFile">
+              <i data-lucide="upload-cloud"></i>
+              <span>Choose File</span>
+              <input type="file" id="businessRegFile" name="businessRegFile" accept=".pdf,.jpg,.jpeg,.png" required />
+            </label>
+            <div class="file-preview" id="preview-businessReg"></div>
+            <span class="error-msg">Business registration document is required.</span>
+          </div>
+
+          <!-- Tax Documents -->
+          <div class="upload-card" id="card-taxDoc">
+            <div class="upload-icon"><i data-lucide="receipt"></i></div>
+            <div class="upload-info">
+              <h3>Tax Document <span class="req">*</span></h3>
+              <p>GST Registration Certificate, PAN Card, or TAN Certificate</p>
+            </div>
+            <label class="upload-btn" for="taxDocFile">
+              <i data-lucide="upload-cloud"></i>
+              <span>Choose File</span>
+              <input type="file" id="taxDocFile" name="taxDocFile" accept=".pdf,.jpg,.jpeg,.png" required />
+            </label>
+            <div class="file-preview" id="preview-taxDoc"></div>
+            <span class="error-msg">Tax document is required.</span>
+          </div>
+
+          <!-- Cancelled Cheque -->
+          <div class="upload-card" id="card-cheque">
+            <div class="upload-icon"><i data-lucide="credit-card"></i></div>
+            <div class="upload-info">
+              <h3>Cancelled Cheque / Bank Proof <span class="req">*</span></h3>
+              <p>Cancelled cheque leaf or bank passbook front page</p>
+            </div>
+            <label class="upload-btn" for="chequeFile">
+              <i data-lucide="upload-cloud"></i>
+              <span>Choose File</span>
+              <input type="file" id="chequeFile" name="chequeFile" accept=".pdf,.jpg,.jpeg,.png" required />
+            </label>
+            <div class="file-preview" id="preview-cheque"></div>
+            <span class="error-msg">Bank proof document is required.</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── SECTION 6: DECLARATION ── -->
+      <div class="form-section declaration-section">
+        <div class="section-header">
+          <div class="section-icon"><i data-lucide="scroll-text"></i></div>
+          <div>
+            <h2>Declaration</h2>
+            <p>Please read and accept the declaration before submitting.</p>
+          </div>
+        </div>
+        <div class="declaration-box">
+          <p>I/We hereby declare that the information furnished above is true, correct, and complete to the best of my/our knowledge and belief. I/We understand that any false information may result in the rejection of this application or termination of vendor status. I/We authorize the company to verify all documents submitted herein.</p>
+        </div>
+        <label class="checkbox-label">
+          <input type="checkbox" id="declarationCheck" name="declarationCheck" required />
+          <span class="checkmark"></span>
+          <span>I agree to the above declaration and confirm that all information provided is accurate. <span class="req">*</span></span>
+        </label>
+        <span class="error-msg" id="declError">You must accept the declaration.</span>
+      </div>
+
+      <!-- ── SUBMIT AREA ── -->
+      <div class="submit-area">
+        <button type="button" class="btn-secondary" onclick="resetForm()">
+          <i data-lucide="rotate-ccw"></i> Reset Form
+        </button>
+        <button type="submit" class="btn-primary" id="submitBtn">
+          <i data-lucide="send"></i>
+          <span>Submit Application</span>
+        </button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- ===== SUCCESS MODAL ===== -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal">
+      <div class="modal-icon success"><i data-lucide="check-circle-2"></i></div>
+      <h2>Application Submitted!</h2>
+      <p>Thank you for registering. Your vendor application has been received successfully. Our team will review your details and get back to you within <strong>3–5 business days</strong>.</p>
+      <p class="modal-ref">Reference ID: <strong id="refId">—</strong></p>
+      <button class="btn-primary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- ===== ERROR MODAL ===== -->
+  <div class="modal-overlay" id="errorModal">
+    <div class="modal">
+      <div class="modal-icon error"><i data-lucide="x-circle"></i></div>
+      <h2>Submission Failed</h2>
+      <p id="errorMessage">Something went wrong. Please try again or contact support.</p>
+      <button class="btn-primary" onclick="document.getElementById('errorModal').classList.remove('active')">Close</button>
+    </div>
+  </div>
+
+  <!-- ===== LOADING OVERLAY ===== -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+    <p>Submitting your application…</p>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>© 2026 Vendor Management System. All rights reserved.</p>
+    <p>For assistance, contact <a href="mailto:support@vms.com">support@vms.com</a></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
